@@ -63,3 +63,5 @@ In Adobe Camera Raw or Lightroom:
 * choose the new cube file
 * set Space to ProPhoto RGB
 * set Amount Min and Max to 100
+
+![create profile dialog](/create_profile.png)
