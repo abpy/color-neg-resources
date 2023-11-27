@@ -1,7 +1,7 @@
 # input: log10/density, output: linear
 # kodak endura curve
 # by Aaron Buchler, 2023
-# https://github.com/abpy/abpy.github.io
+# https://github.com/abpy/color-neg-resources
 
 LUT_1D_SIZE 1024
 

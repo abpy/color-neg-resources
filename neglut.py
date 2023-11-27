@@ -1,3 +1,6 @@
+# by Aaron Buchler, 2023
+# https://github.com/abpy/color-neg-resources
+
 from math import log10
 
 
@@ -17,6 +20,7 @@ else:
 
 savename = savename + ".cube"
 print(savename)
+
 
 # replaces numpy.dot
 def dot(m, v):

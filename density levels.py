@@ -1,6 +1,6 @@
 # script to demonstrate calculation of white balance and density balance from two gray patches on a negative scan
 # by Aaron Buchler, 2023
-# https://github.com/abpy/abpy.github.io
+# https://github.com/abpy/color-neg-resources
 
 from math import log10
 
