@@ -67,7 +67,7 @@ paper = False # True / False: use paper lut
 
 Run the script and it will write the .cube file.
 
-In Adobe Camera Raw or Lightroom:
+To make a profile in Adobe Camera Raw or Lightroom:
 * set white balance to As Shot
 * select the linear camera profile
 * option/alt click the new preset button
