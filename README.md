@@ -86,6 +86,13 @@ file|lut|function|input|output|input range
 inverse_01.cube  |inverse                 |$\frac{0.01}{x}$|linear(negative)|linear|0-1
 density.cube     |transmittance to density|$\log_{10}(\frac{1}{x})$|linear(negative)|density|0-1
 10^x.01_4.cube   |density to luminance    |$10^{x}\cdot 0.01$|density|linear|0-4
-inv_density.cube |inverse density         |$\frac{1}{10^{x}}$|density|linear|0-4
+inv_density.cube |inverse density         |$\frac{1}{10^{x}}$|density|linear(negative)|0-4
 paper_a.cube     |paper print curve       | |density|linear|0-3
 paper_invert.cube|paper print curve       | |linear(negative)|linear|0-1
+
+##### Paper Print LUTs
+A lut to simulate the response curve of photographic paper.  
+Use an exposure adjustment layer before this lut to adjust exposure and contrast.
+
+`paper_a`: use in place of 'density to luminance'. offset controls exposure, exposure controls contrast  
+`paper_invert`: use in place of 'inverse'. exposure controls exposure, gamma controls contrast  
