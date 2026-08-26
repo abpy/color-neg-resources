@@ -4,14 +4,21 @@
 from math import log10
 
 
+# values for white balance in ACEScg
+# (linear channel multiply)
+redMult   = 1.0
+greenMult = 1.0
+blueMult  = 1.0
+
 # values for density balance in ACEScg
-redScale = 1.0
+redScale   = 1.0
 greenScale = 0.807
-blueScale = 0.579
+blueScale  = 0.579
 
 savename = "ektar" # film name
 
 paper = False # True / False: use paper lut
+
 
 if paper:
     savename += "_paper"
@@ -53,11 +60,21 @@ curve = [p / max(curve) for p in curve]
 t_size = len(curve) - 1
 #print(t_size)
 
-#rescale so green is 1.0
+
+# rescale so green is 1.0
 scalef = greenScale
 redScale = redScale / scalef
 greenScale = greenScale / scalef
 blueScale = blueScale / scalef
+
+scalef = greenMult
+redMult = redMult / scalef
+greenMult = greenMult / scalef
+blueMult = blueMult / scalef
+
+print(redMult, greenMult, blueMult)
+print(redScale, greenScale, blueScale)
+
 
 #cube
 cubeRes = 32
@@ -79,6 +96,10 @@ for b in range(cubeRes):
             rgb = [ch ** 1.8 for ch in rgb]
             rgb = dot(prophoto_to_acescg, rgb)
 
+            # wb
+            rgb = [rgb[0] * redMult, rgb[1] * greenMult, rgb[2] * blueMult]
+
+            # density
             rgb = [max(.0001, ch) for ch in rgb]
             rgb = [log10(1 / ch) for ch in rgb]
 
